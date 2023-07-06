@@ -1,5 +1,7 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
+import { connectionToDB } from '@/utils/database'
+import User from '@/models/user'
 
 const handler = NextAuth({
     providers: [
@@ -10,12 +12,34 @@ const handler = NextAuth({
     ],
     callbacks: {
         async jwt({ token }) {
-          token.userRole = "admin"
-          return token
+            token.userRole = "admin"
+            return token
         },
-      },
+        async signIn({ profile }) {
+            try {
+                await connectionToDB()
+
+                const userExists = await User.findOne({
+                    email: profile.email
+                })
+
+                if (!userExists) {
+                    await User.create({
+                        email: profile.email,
+                        username: profile.name.replace(/\s/g, "").toLowerCase(),
+                        image: profile.picture
+                    })
+                }
+                return true
+            }
+            catch (error) {
+                console.log(error)
+                return false
+            }
+        }
+    },
 })
 
 // export default NextAuth(authOptions)
-export {handler as GET, handler as POST}
+export { handler as GET, handler as POST }
 
