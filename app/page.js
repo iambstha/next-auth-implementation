@@ -6,7 +6,6 @@ import { getProviders } from "next-auth/react"
 
 export default function Home() {
   const { data: session, status } = useSession()
-  const [data, setData] = useState([])
   const loading = status === "loading"
   const [providers, setProviders] = useState(null)
   useEffect(() => {
@@ -14,24 +13,12 @@ export default function Home() {
       const response = await getProviders()
       setProviders(response)
     }
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/api/data');
-      const data = await response.json();
-      setData(data);
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fetchData()
     setUpProviders()
   }, [])
 
-  console.log(data)
-
   return (
-    <header>
-      <div>
+    <div>
+      <div className=" py-4 ">
         <p>
           {!session && providers &&
             Object.values(providers).map((provider) => {
@@ -45,9 +32,6 @@ export default function Home() {
             })}
           {session?.user && (
             <>
-              <span className=" mr-4 ">
-                <small>Signed in as</small> <strong>{session.user.email ?? session.user.name}</strong>
-              </span>
               <a className='outline_btn border border-orange-300 bg-orange-300 p-1 px-4 hover:shadow rounded-lg opacity-80 hover:opacity-90' href={`/api/auth/signout`} 
                   onClick={(e) => {
                   e.preventDefault()
@@ -60,13 +44,7 @@ export default function Home() {
           )}
         </p>
       </div>
-      <div className=" p-2 ">
-        <h3 className=" font-semibold underline underline-offset-2 ">Available free data</h3>
-       <ul>
-       {data?.lists.map(d => <li>{d.name}</li>)}
-       </ul>
-      </div>
-    </header>
+    </div>
   )
 }
 

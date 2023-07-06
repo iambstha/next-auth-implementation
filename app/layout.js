@@ -1,6 +1,8 @@
+import Nav from '@/components/Nav'
 import './globals.css'
 import Provider from '@/components/Provider'
 import { Space_Grotesk } from 'next/font/google'
+import HeadProfile from '@/components/HeadProfile'
 const font = Space_Grotesk({ subsets: ['latin'], weight : ['400'] })
 
 export const metadata = {
@@ -14,6 +16,8 @@ const Root = ({ children }) => {
             <body className={font.className}>
                 <Provider>
                     <div className=' p-4 m-4 border '>
+                      <HeadProfile />
+                      <Nav />
                       {children}
                     </div>
                 </Provider>

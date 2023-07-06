@@ -3,8 +3,8 @@ import { NextResponse } from 'next/server'
 export async function GET(req, res) {
     console.log('Hello')
     const lists = [
-        {id: 1, name: 'John Doe'},
-        {id: 2, name: 'Helen Keller'},
+        {id: 1, name: 'Albert Einstein'},
+        {id: 2, name: 'Oppenheimer'},
     ]
   return NextResponse.json({ lists })
 }
