@@ -6,6 +6,11 @@ const UserSchema = new Schema({
         unique: [true, 'Email already exists!'],
         required: [true, 'Email is required!']
     },
+    name: {
+        type: String,
+        required: [true, 'Name is required!'],
+        match: [/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/, "Name invalid"]
+      },
     username: {
         type: String,
         required: [true, 'Username is required!'],
