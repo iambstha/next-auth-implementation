@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect } from "react"
 import { signIn, signOut, useSession } from "next-auth/react"
-// import { authOptions } from "./api/auth/[...nextauth]/route"
 import { getProviders } from "next-auth/react"
 
 export default function Home() {
@@ -22,13 +21,13 @@ export default function Home() {
         <p>
           {!session && providers &&
             Object.values(providers).map((provider) => {
-              return <button
-                type='button'
-                key={provider.name}
-                onClick={() => signIn(provider.id)} 
-                className='outline_btn border border-orange-300 bg-orange-300 p-1 px-4 hover:shadow rounded-lg opacity-80 hover:opacity-90'>
-                Sign In With Google
-              </button>
+              return <div>Hello <button
+              type='button'
+              key={provider.name}
+              onClick={() => signIn(provider.id)} 
+              className='outline_btn border border-orange-300 bg-orange-300 p-1 px-4 hover:shadow rounded-lg opacity-80 hover:opacity-90'>
+              Sign In With Google
+            </button></div>
             })}
           {session?.user && (
             <>
