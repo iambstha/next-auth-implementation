@@ -6,6 +6,7 @@ import { getProviders } from "next-auth/react"
 
 export default function Home() {
   const { data: session, status } = useSession()
+  const [data, setData] = useState([])
   const loading = status === "loading"
   const [providers, setProviders] = useState(null)
   useEffect(() => {
@@ -13,16 +14,27 @@ export default function Home() {
       const response = await getProviders()
       setProviders(response)
     }
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/data');
+      const data = await response.json();
+      setData(data);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchData()
     setUpProviders()
   }, [])
 
+  console.log(data)
+
   return (
     <header>
-      <div class>
+      <div>
         <p>
           {!session && providers &&
             Object.values(providers).map((provider) => {
-              console.log(provider.id)
               return <button
                 type='button'
                 key={provider.name}
@@ -47,6 +59,12 @@ export default function Home() {
             </>
           )}
         </p>
+      </div>
+      <div className=" p-2 ">
+        <h3 className=" font-semibold underline underline-offset-2 ">Available free data</h3>
+       <ul>
+       {data?.lists.map(d => <li>{d.name}</li>)}
+       </ul>
       </div>
     </header>
   )
