@@ -9,6 +9,7 @@ const Nav = () => {
             <li className=' hover:underline '><Link href='/user-list'>All User List</Link></li>
             <li className=' hover:underline '><Link href='/data-without-session'>Data without session</Link></li>
             <li className=' hover:underline '><Link href='/data-with-session'>Data with session</Link></li>
+            <li className=' hover:underline '><Link href='/admin'>Only admin</Link></li>
         </ul>
     </div>
   )

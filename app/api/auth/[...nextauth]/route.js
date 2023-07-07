@@ -13,6 +13,7 @@ const handler = NextAuth({
     callbacks: {
         async jwt({ token }) {
             token.userRole = "admin"
+            console.log(token)
             return token
         },
         async signIn({ profile }) {

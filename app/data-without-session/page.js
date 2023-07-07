@@ -27,11 +27,3 @@ export default function Home() {
     )
 }
 
-// export async function getServerSideProps(context) {
-//   return {
-//     props: {
-//       session: await getServerSession(context.req, context.res, authOptions),
-//     },
-//   }
-// }
-
