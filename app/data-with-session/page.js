@@ -9,7 +9,6 @@ export default function Home() {
     return <span className=" text-2xl ">Please sign in to view this data.</span>
   }
   else{
-
     return <span className=" text-2xl ">You can see this section, because you are signed in.</span>
   }
 
