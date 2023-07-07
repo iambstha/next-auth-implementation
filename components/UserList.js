@@ -10,8 +10,8 @@ const UserList = async () => {
     <div>
       <h2>Total users: {list.length}</h2>
       <ul>
-        <table className=' border' >
-          <tr className=' border text-slate-700 '>
+        <table className=' ' >
+          <tr className=' border text-slate-700 bg-slate-100 '>
             <th className='p-2 border'>Profile Image</th>
             <th className='p-2 border'>Username</th>
             <th className='p-2 border'>Email</th>
