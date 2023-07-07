@@ -19,7 +19,7 @@ const Root = ({ children }) => {
                         <h2 className=' text-2xl p-2 '>Next Auth Implementation for Stable <a target='_blank' className=' text-blue-500 hover:underline ' href="https://nextjs.org/docs/app/building-your-application/routing#the-app-router">App Router</a> </h2>
                         <p><span className=' text-red-500 font-semibold '>Alert: </span>Work in progress!!!</p>
                     </div>
-                    <div className=' p-4 m-4 border '>
+                    <div className='p-2 md:p-4 m-2 md:m-4 border  '>
                       <HeadProfile />
                       <Nav />
                       {children}

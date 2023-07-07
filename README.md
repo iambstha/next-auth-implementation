@@ -23,7 +23,7 @@
 
 ## Stack Used
 1. JavaScript / React / NextJS for development
-2. [Fake Store API](https://fakestoreapi.com/docs) for data fetching
+2. [Fake Store API](https://fakestoreapi.com) for data fetching
 3. Vercel for deployment
 4. Github as version control, collaboration & update on vercel.
 
