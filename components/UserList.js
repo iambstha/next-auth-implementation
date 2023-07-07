@@ -4,12 +4,17 @@ import User from '@/models/user'
 
 const UserList = async () => {
     await connectionToDB()
-    const d = await User.find()
+    const list = await User.find()
 
-    console.log(d)
+    console.log(list[0].email)
 
   return (
-    <div>UserList: Work in progress!!!</div>
+    <div>
+      <h2>Total users: {list.length}</h2>
+      <ul>
+      {list && list.map(d => <li className=' text-sm text-slate-500 ' key={d.id}>{d.username}</li> )}
+      </ul>
+    </div>
   )
 }
 
