@@ -20,7 +20,7 @@ export default function Home() {
             <div>
                 <span className=" text-2xl ">You can view this without signing in.</span>
                 <ul>
-                    {fdata?.map(d => <li className=" text-sm text-slate-500 " key={d.id}>{d.title}</li>)}
+                    {fdata ? fdata.map(d => <li className=" text-sm text-slate-500 " key={d.id}>{d.title}</li>) : 'Loading data . . '}
                 </ul>
             </div>
         </div>

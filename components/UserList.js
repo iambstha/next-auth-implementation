@@ -8,7 +8,8 @@ const UserList = async () => {
   const list = await User.find()
   return (
     <div>
-      <h2>Total users: {list.length}</h2>
+      <h2 className=' text-2xl pb-2'>All Users</h2>
+      <h3>Total users: {list.length}</h3>
       <ul>
         <table className=' ' >
           <thead>
