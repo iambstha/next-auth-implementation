@@ -17,6 +17,7 @@ const HeadProfile = () => {
                         width={40}
                         height={40}
                         className=' border rounded-full overflow-hidden '
+                        alt='image'
                     />
                 )}
                 <div>{session && <><span>Hello {session && session?.user.name}</span></>}</div>

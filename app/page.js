@@ -18,16 +18,16 @@ export default function Home() {
   return (
     <div>
       <div className=" py-4 ">
-        <p>
+        <div>
           {!session && providers &&
             Object.values(providers).map((provider) => {
-              return <div>Hello <button
+              return <button
               type='button'
               key={provider.name}
               onClick={() => signIn(provider.id)} 
               className='outline_btn border border-orange-300 bg-orange-300 p-1 px-4 hover:shadow rounded-lg opacity-80 hover:opacity-90'>
               Sign In With Google
-            </button></div>
+            </button>
             })}
           {session?.user && (
             <>
@@ -41,7 +41,7 @@ export default function Home() {
               </a>
             </>
           )}
-        </p>
+        </div>
       </div>
     </div>
   )
