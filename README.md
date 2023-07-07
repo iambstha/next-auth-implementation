@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NEXT AUTH IMPLEMENTATION
+## For Stable App Router
+![Homepage Shot](./public/screenshots/1.jpg)
 
-## Getting Started
+## How to?
 
-First, run the development server:
+### For live demo visit [NEXT AUTH HOMEPAGE](https://next-auth-implementation-phi.vercel.app//) deployed in Vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### For local hosting
+1. Visit my repository at github [here](https://github.com/iambstha/next-auth-implementation)
+2. Clone the repository in your local drive
+3. Open command prompt & navigate to the project directory
+4. Create `.env` file
+5. Paste everything from `env.txt` in `.env` file. Make sure to replace the required values.
+4. Run `npm run dev`
+5. If any issue with tailwind or any node modules occur, please `npm install` in your command prompt
+6. Open `http://localhost:3000/` in your browser; chrome or brave is preferred, since there is webkit audio controller in the application, not every browser supports the controller.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Music Sansar | Deployment   | Link     |
+| :---:        |    :----:    |    :---: |
+| Live         | Vercel      | [NEXT AUTH HOMEPAGE](https://next-auth-implementation-phi.vercel.app//)   |
+| Localhost    | Locally      | `http://localhost:3000/`      |
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Stack Used
+1. JavaScript / React / NextJS for development
+2. [Fake Store API](https://fakestoreapi.com/docs) for data fetching
+3. Vercel for deployment
+4. Github as version control, collaboration & update on vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Issue
 
-## Learn More
+- [x] Do not go to the deployed url from github, I have not set the redirect url for github deployment url.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Uncompleted Tasks
+- [ ] Update to / Delete from MongoDB through UI
+- [ ] Error checks & loaders
