@@ -7,10 +7,10 @@ const UserList = async () => {
   await connectionToDB()
   const list = await User.find()
   return (
-    <div>
-      <h2 className=' text-2xl pb-2'>All Users</h2>
-      <h3>Total users: {list.length}</h3>
-      <ul>
+    <div className=' flex flex-col justify-center w-full text-center '>
+      <h2 className=' text-2xl pb-2 text-center '>All Users</h2>
+      <h3 className=' pb-2 '>Total users: {list.length}</h3>
+      <ul className=' flex justify-center items-center ' >
         <table className=' ' >
           <thead>
             <tr className=' border text-slate-700 bg-slate-100 '>

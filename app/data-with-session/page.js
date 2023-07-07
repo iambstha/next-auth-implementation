@@ -6,10 +6,10 @@ export default function Home() {
   const {data: session } = useSession()
 
   if(!session){
-    return <span className=" text-2xl ">Please sign in to view this data.</span>
+    return <span className=" text-2xl flex justify-center items-center ">Please sign in to view this data.</span>
   }
   else{
-    return <span className=" text-2xl ">You can see this section, because you are signed in.</span>
+    return <span className=" text-2xl flex justify-center items-center ">You can see this section, because you are signed in.</span>
   }
 
 }

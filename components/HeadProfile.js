@@ -10,13 +10,13 @@ const HeadProfile = () => {
     }
     else {
         return (
-            <div className=' flex items-center gap-4 mb-2 '>
+            <div className=' flex  justify-center items-center gap-4 mb-2 w-full text-slate-400 '>
                 {session?.user && session.user.image && (
                     <Image
                         src={session.user.image}
                         width={40}
                         height={40}
-                        className=' border rounded-full overflow-hidden '
+                        className=' border rounded-full overflow-hidden opacity-60 '
                         alt='image'
                     />
                 )}

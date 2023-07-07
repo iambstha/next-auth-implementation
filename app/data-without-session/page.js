@@ -17,7 +17,7 @@ export default function Home() {
     }, [])
     return (
         <div>
-            <div>
+            <div className=" flex flex-col justify-center items-center " >
                 <span className=" text-2xl ">You can view this without signing in.</span>
                 <ul>
                     {fdata ? fdata.map(d => <li className=" text-sm text-slate-500 " key={d.id}>{d.title}</li>) : <li>'Loading data . . '</li>}

@@ -6,7 +6,7 @@ import React from 'react'
 const page = () => {
     const { data: session, loading, status } = useSession()
     return (
-        <div>
+        <div className=' flex flex-col justify-center items-center '>
             <h2 className=' text-2xl pb-4 '>Your Profile Page</h2>
             {session ?
                 <div className=' flex gap-4 justify-start items-start '>
