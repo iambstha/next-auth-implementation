@@ -13,7 +13,6 @@ const handler = NextAuth({
     callbacks: {
         async jwt({ token }) {
             token.userRole = "admin"
-            console.log(token)
             return token
         },
         async signIn({ profile }) {
@@ -41,6 +40,5 @@ const handler = NextAuth({
     },
 })
 
-// export default NextAuth(authOptions)
 export { handler as GET, handler as POST }
 
