@@ -4,8 +4,10 @@ import User from '@/models/user'
 import Image from 'next/image'
 
 const UserList = async () => {
+
   await connectionToDB()
   const list = await User.find()
+  console.log(list)
   return (
     <div className=' flex flex-col justify-center w-full text-center '>
       <h2 className=' text-2xl pb-2 text-center '>All Users</h2>
@@ -19,7 +21,7 @@ const UserList = async () => {
               <th className='p-2 border'>Email</th>
             </tr>
           </thead>
-          {list && list.map(d =>
+          {list && list?.map(d =>
             <tbody>
               <tr key={d.id} className=' border text-slate-500 '>
                 <td className=' p-2 flex justify-center '><div className=' rounded-full overflow-hidden '><Image alt='image' src={d.image} width={40} height={40} className='rounded-full' /></div></td>
