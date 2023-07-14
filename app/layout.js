@@ -11,7 +11,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 export const metadata = {
-  title: 'Next Auth Implemantation',
+  title: 'Next Auth Implementation',
   description: 'A next auth implementation example website to test next auth features.',
 }
 
