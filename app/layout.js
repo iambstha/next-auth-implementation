@@ -11,8 +11,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 export const metadata = {
-  title: 'Bookie',
-  description: 'A bookstore application.',
+  title: 'Next Auth Implemantation',
+  description: 'A next auth implementation example website to test next auth features.',
 }
 
 const Root = ({ children }) => {
