@@ -24,5 +24,3 @@ try:
     print("The user is logged out.")
 except:
     print("The logged out component is not found.")
-
-print(a)
