@@ -13,8 +13,6 @@ driver.implicitly_wait(5)
 # getUrl = input("Enter the url: ")
 driver.get("https://next-auth-implementation-phi.vercel.app/")
 
-print(a)
-
 try:
     isLoggedIn = driver = driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div/span")
     print("The user is logged in.")
