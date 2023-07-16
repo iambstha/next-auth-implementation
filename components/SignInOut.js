@@ -18,6 +18,7 @@ export default function SignInOut() {
     setUpProviders()
   }, [])
 
+
   return (
     <div>
       <div className=" py-4 text-slate-950 ">

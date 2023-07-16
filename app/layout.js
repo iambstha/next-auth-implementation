@@ -18,13 +18,13 @@ export const metadata = {
 const Root = ({ children }) => {
     return (
         <html lang='en'>
-            <body className={font.className}>
+            <body className={`${font.className} h-screen`}>
                 <Provider>
-                    <div className=' flex flex-col w-full text-center p-2 '>
+                    <div className=' flex flex-col w-full text-center p-2 h-1/4'>
                         <h2 className=' text-2xl p-2 '>Next Auth Implementation for Stable <a target='_blank' className=' text-blue-500 hover:underline ' href="https://nextjs.org/docs/app/building-your-application/routing#the-app-router">App Router</a> </h2>
                         <p><span className=' text-red-500 font-semibold '>Alert: </span>Work in progress!!!</p>
                     </div>
-                    <div className='p-2 md:p-4 m-2 md:m-4 flex flex-col w-ful '>
+                    <div className='p-2 md:p-4 m-2 md:m-4 flex flex-col w-full h-3/4'>
                       <HeadProfile />
                       <Nav />
                       {children}
