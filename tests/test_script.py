@@ -24,6 +24,3 @@ try:
     print("The user is logged out.")
 except:
     print("The logged out component is not found.")
-
-ran = driver = driver.find_element(by=By.XPATH, value="hello")
-ran.click()
