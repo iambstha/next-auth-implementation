@@ -15,28 +15,28 @@ const handler = NextAuth({
             token.userRole = "admin"
             return token
         },
-        // async signIn({ profile }) {
-        //     try {
-        //         await connectionToDB()
+        async signIn({ profile }) {
+            try {
+                await connectionToDB()
 
-        //         const userExists = await User.findOne({
-        //             email: profile.email
-        //         })
+                const userExists = await User.findOne({
+                    email: profile.email
+                })
 
-        //         if (!userExists) {
-        //             await User.create({
-        //                 email: profile.email,
-        //                 username: profile.name.replace(/\s/g, "").toLowerCase(),
-        //                 image: profile.picture
-        //             })
-        //         }
-        //         return true
-        //     }
-        //     catch (error) {
-        //         console.log(error)
-        //         return false
-        //     }
-        // }
+                if (!userExists) {
+                    await User.create({
+                        email: profile.email,
+                        username: profile.name.replace(/\s/g, "").toLowerCase(),
+                        image: profile.picture
+                    })
+                }
+                return true
+            }
+            catch (error) {
+                console.log(error)
+                return false
+            }
+        }
     },
 })
 
